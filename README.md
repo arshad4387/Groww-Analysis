@@ -15,7 +15,7 @@
 12. [References](#references)
 
 
-**## Problem Statement:**
+## Problem Statement
   Analyzing the stock trading data from Groww to identify top-performing and underperforming stocks across different trade types (Intraday, Short Term, Long Term) and also to view the P&L for each stock. 
   Aiming to provide better insights for better trading strategies.
 
