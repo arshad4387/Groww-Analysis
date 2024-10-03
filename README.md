@@ -13,7 +13,7 @@
 10. [Future Possibilities](#future-possibilities)
 11. [Conclusion](#conclusion)
 12. [References](#references)
-13. [summa](#summma)
+13. [summa](#summa)
 
 
 ## Problem Statement
