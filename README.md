@@ -8,7 +8,9 @@ Project Objective:
 
 Data Description:
   Stock: The name of the stock.
+  
   ISIN: International Securities Identification Number.
+  
   Quantity: Number of shares traded.
   Buy Date: Date when the stock was purchased.
   Buy Price: Price at which the stock was bought.
