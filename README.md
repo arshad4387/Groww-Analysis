@@ -9,22 +9,22 @@
 
 **Data Description:**
   _Stock_: The name of the stock.
-  ISIN: International Securities Identification Number.
-  Quantity: Number of shares traded.
-  Buy Date: Date when the stock was purchased.
-  Buy Price: Price at which the stock was bought.
-  Buy Value: Total value spent on buying the stock.
-  Sell Date: Date when the stock was sold.
-  Sell Price: Price at which the stock was sold.
-  Sell Value: Total value received from selling the stock.
-  P&L: Profit and Loss from the trade.
-  Remarks: Additional notes or comments on the trade.
+  _ISIN_: International Securities Identification Number.
+  _Quantity_: Number of shares traded.
+  _Buy Date_: Date when the stock was purchased.
+  _Buy Price_: Price at which the stock was bought.
+  _Buy Value_: Total value spent on buying the stock.
+  _Sell Date_: Date when the stock was sold.
+  _Sell Price_: Price at which the stock was sold.
+  _Sell Value_: Total value received from selling the stock.
+  _P&L_: Profit and Loss from the trade.
+  _Remarks_: Additional notes or comments on the trade.
 
 **Data Pre-processing Steps:**
-  Data Cleaning:
+  _Data Cleaning_:
     Since we are using the report from Groww, data cleaning steps are very minimal.
     * Convert data types to appropriate formats (e.g., numeric types for stock quantity, buy value, sell value etc.)
-  Grouping and Aggregating:
+  _Grouping and Aggregating_:
     Group by stock and trade type to summarize total values and P&L.
 
 **Assumptions:**
@@ -35,25 +35,22 @@
   * There are no transaction costs affecting the P&L values.
 
 **Model Evaluations and Techniques:**
-*Grouping* and Aggregating: Using pandas groupby to summarize data.
+_Grouping and Aggregating_: Using pandas groupby to summarize data.
+_Ranking_: Finding top and bottom performing stocks using pandas' nlargest and nsmallest functions.
+_Filtering_: Ensuring only positive gains and negative losses are included in the respective summaries.
+_Visualization_: Using IPython display the DataFrames together.
 
-Ranking: Finding top and bottom performing stocks using pandas' nlargest and nsmallest functions.
+**Inferences:**
+  * Helps to understand which stocks and trade types are performing well and which are not.
+  * Easily identify top gains and top loss for each trade type.
+  * Understand the platform charges, brokerage and DP charges.
 
-Filtering: Ensuring only positive gains and negative losses are included in the respective summaries.
+**Future Possibilities:**
+  * Fetching current data of the stocks from a database or using API's.
+  * Incorporating machine learning models to predict future performance based on historical data.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+**Conclusion:**
+  This project provides a robust framework for analyzing stock trading performance, helping traders and investors make informed decisions. By identifying the top gainers and losers, one can refine trading strategies and improve profitability.
 
 
 
