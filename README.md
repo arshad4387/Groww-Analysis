@@ -4,17 +4,12 @@
 1. [Introduction/Problem Statement](#introduction)
 2. [Project Objective](#project-objective)
 3. [Data Description](#data-description)
-4. [Data Pre-processing](#data-pre-processing)
-5. [Analysis](#analysis)
-6. [Inspiration](#inspiration)
-7. [Assumptions](#assumptions)
-8. [Model Evaluations and Techniques](#model-evaluations-and-techniques)
-9. [Inferences](#inferences)
-10. [Future Possibilities](#future-possibilities)
-11. [Conclusion](#conclusion)
-12. [References](#references)
-13. [Arshad](#summa)
-
+4. [Data Pre-processing](#data-pre-processing-steps)
+5. [Assumptions](#assumptions)
+6. [Model Evaluations and Techniques](#model-evaluations-and-techniques)
+7. [Inferences](#inferences)
+8. [Future Possibilities](#future-possibilities)
+9. [Conclusion](#conclusion)
 
 ## Introduction
   Analyzing the stock trading data from Groww to identify top-performing and underperforming stocks across different trade types (Intraday, Short Term, Long Term) and also to view the P&L for each stock, aiming to provide better insights for better trading strategies.
@@ -41,7 +36,7 @@
     * Convert data types to appropriate formats (e.g., numeric types for stock quantity, buy value, sell value etc.)
   * _Grouping and Aggregating_:
     Group by stock and trade type to summarize total values and P&L.
-## summa
+
 ## Assumptions
   * The import file should be the report exported from GROWW.
   * All trades prices available in the report will be true as of buying/selling date.
