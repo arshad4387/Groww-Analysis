@@ -28,17 +28,15 @@
     Group by stock and trade type to summarize total values and P&L.
 
 **Assumptions:**
-  * The import file should be report exported from GROWW.
-  * 
-  * All trades are executed at the recorded prices and quantities.
+  * The import file should be the report exported from GROWW.
+  * All trades prices available in the report will be true as of buying/selling date.
   * The dataset accurately reflects all relevant trading activities and prices.
-  * There are no transaction costs affecting the P&L values.
 
 **Model Evaluations and Techniques:**
-_Grouping and Aggregating_: Using pandas groupby to summarize data.
-_Ranking_: Finding top and bottom performing stocks using pandas' nlargest and nsmallest functions.
-_Filtering_: Ensuring only positive gains and negative losses are included in the respective summaries.
-_Visualization_: Using IPython display the DataFrames together.
+  * _Grouping and Aggregating_: Using pandas groupby to summarize data.
+  * _Ranking_: Finding top and bottom performing stocks using pandas' nlargest and nsmallest functions.
+  * _Filtering_: Ensuring only positive gains and negative losses are included in the respective summaries.
+  * _Visualization_: Using IPython display the DataFrames together.
 
 **Inferences:**
   * Helps to understand which stocks and trade types are performing well and which are not.
@@ -51,6 +49,3 @@ _Visualization_: Using IPython display the DataFrames together.
 
 **Conclusion:**
   This project provides a robust framework for analyzing stock trading performance, helping traders and investors make informed decisions. By identifying the top gainers and losers, one can refine trading strategies and improve profitability.
-
-
-
