@@ -10,7 +10,7 @@
 7. [Inferences](#inferences)
 8. [Future Possibilities](#future-possibilities)
 9. [Conclusion](#conclusion)
-[Code Snippets ;)](#code)
+10. [Code Snippets :) ](#code)
 
 ## Introduction
   Analyzing the stock trading data from Groww to identify top-performing and underperforming stocks across different trade types (Intraday, Short Term, Long Term) and also to view the P&L for each stock, aiming to provide better insights for better trading strategies.
