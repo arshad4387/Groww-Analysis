@@ -1,4 +1,4 @@
-# Groww-Analysis
+# Groww Analysis
 
 ## Table of Contents
 1. [Introduction/Problem Statement](#introduction)
