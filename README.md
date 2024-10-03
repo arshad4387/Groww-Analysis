@@ -62,4 +62,4 @@
   This project provides a robust framework for analyzing stock trading performance, helping traders and investors make informed decisions. By identifying the top gainers and losers, one can refine trading strategies and improve profitability.
 
 ## Code
-- **[Groww Analysis.ipynb](groww_summary.ipynb)**: Notebook for stock summary.
+- **[Groww Analysis.ipynb](Groww Summary.ipynb)**: Notebook for stock summary.
