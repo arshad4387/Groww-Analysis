@@ -1,5 +1,20 @@
 # Groww-Analysis
 
+## Table of Contents
+1. [Introduction](#introduction)
+2. [Project Objective](#project-objective)
+3. [Data Description](#data-description)
+4. [Data Pre-processing](#data-pre-processing)
+5. [Analysis](#analysis)
+6. [Inspiration](#inspiration)
+7. [Assumptions](#assumptions)
+8. [Model Evaluations and Techniques](#model-evaluations-and-techniques)
+9. [Inferences](#inferences)
+10. [Future Possibilities](#future-possibilities)
+11. [Conclusion](#conclusion)
+12. [References](#references)
+
+
 **Problem Statement:**
   Analyzing the stock trading data from Groww to identify top-performing and underperforming stocks across different trade types (Intraday, Short Term, Long Term) and also to view the P&L for each stock. 
   Aiming to provide better insights for better trading strategies.
