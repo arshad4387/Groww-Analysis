@@ -35,7 +35,7 @@
   * There are no transaction costs affecting the P&L values.
 
 **Model Evaluations and Techniques:**
-Grouping and Aggregating: Using pandas groupby to summarize data.
+*Grouping* and Aggregating: Using pandas groupby to summarize data.
 
 Ranking: Finding top and bottom performing stocks using pandas' nlargest and nsmallest functions.
 
