@@ -47,7 +47,7 @@
   * All trades prices available in the report will be true as of buying/selling date.
   * The dataset accurately reflects all relevant trading activities and prices.
 
-**Model Evaluations and Techniques:**
+**## Model Evaluations and Techniques:**
   * _Grouping and Aggregating_: Using pandas groupby to summarize data.
   * _Ranking_: Finding top and bottom performing stocks using pandas' nlargest and nsmallest functions.
   * _Filtering_: Ensuring only positive gains and negative losses are included in the respective summaries.
