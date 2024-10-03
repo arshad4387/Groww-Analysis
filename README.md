@@ -1,7 +1,7 @@
 # Groww-Analysis
 
 ## Table of Contents
-1. [Introduction](#introduction)
+1. [Introduction/Problem Statement](#introduction)
 2. [Project Objective](#project-objective)
 3. [Data Description](#data-description)
 4. [Data Pre-processing](#data-pre-processing)
@@ -16,9 +16,8 @@
 13. [Arshad](#summa)
 
 
-## Problem Statement
-  Analyzing the stock trading data from Groww to identify top-performing and underperforming stocks across different trade types (Intraday, Short Term, Long Term) and also to view the P&L for each stock. 
-  Aiming to provide better insights for better trading strategies.
+## Introduction
+  Analyzing the stock trading data from Groww to identify top-performing and underperforming stocks across different trade types (Intraday, Short Term, Long Term) and also to view the P&L for each stock, aiming to provide better insights for better trading strategies.
 
 ## Project Objective
   Groww provides a detailed report containing all the transactions that we have made. Even though detailed reports are good to have, it's difficult to understand the metrics (profit & loss) on stock level. So, the objective is to create a summary of the existing report on stock level and to develop a comprehensive analysis framework that identifies the top 3 stocks that has the most gains and losses for each type of trade.
