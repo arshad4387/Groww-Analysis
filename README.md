@@ -26,3 +26,34 @@ Data Pre-processing Steps:
     * Convert data types to appropriate formats (e.g., numeric types for stock quantity, buy value, sell value etc.)
   Grouping and Aggregating:
     Group by stock and trade type to summarize total values and P&L.
+
+Assumptions:
+  * The import file should be report exported from GROWW.
+  * 
+  * All trades are executed at the recorded prices and quantities.
+  * The dataset accurately reflects all relevant trading activities and prices.
+  * There are no transaction costs affecting the P&L values.
+
+Model Evaluations and Techniques:
+**Grouping** and Aggregating: Using pandas groupby to summarize data.
+
+Ranking: Finding top and bottom performing stocks using pandas' nlargest and nsmallest functions.
+
+Filtering: Ensuring only positive gains and negative losses are included in the respective summaries.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
