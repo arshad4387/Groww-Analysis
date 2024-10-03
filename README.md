@@ -8,17 +8,17 @@
   Groww provides a detailed report containing all the transactions that we have made. Even though detailed reports are good to have, it's difficult to understand the metrics (profit & loss) on stock level. So, the objective is to create a summary of the existing report on stock level and to develop a comprehensive analysis framework that identifies the top 3 stocks that has the most gains and losses for each type of trade.
 
 **Data Description:**
-  _Stock_: The name of the stock.
-  _ISIN_: International Securities Identification Number.
-  _Quantity_: Number of shares traded.
-  _Buy Date_: Date when the stock was purchased.
-  _Buy Price_: Price at which the stock was bought.
-  _Buy Value_: Total value spent on buying the stock.
-  _Sell Date_: Date when the stock was sold.
-  _Sell Price_: Price at which the stock was sold.
-  _Sell Value_: Total value received from selling the stock.
-  _P&L_: Profit and Loss from the trade.
-  _Remarks_: Additional notes or comments on the trade.
+  * _Stock_: The name of the stock.
+  * _ISIN_: International Securities Identification Number.
+  * _Quantity_: Number of shares traded.
+  * _Buy Date_: Date when the stock was purchased.
+  * _Buy Price_: Price at which the stock was bought.
+  * _Buy Value_: Total value spent on buying the stock.
+  * _Sell Date_: Date when the stock was sold.
+  * _Sell Price_: Price at which the stock was sold.
+  * _Sell Value_: Total value received from selling the stock.
+  * _P&L_: Profit and Loss from the trade.
+  * _Remarks_: Additional notes or comments on the trade.
 
 **Data Pre-processing Steps:**
   _Data Cleaning_:
