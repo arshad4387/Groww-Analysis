@@ -21,10 +21,10 @@
   * _Remarks_: Additional notes or comments on the trade.
 
 **Data Pre-processing Steps:**
-  _Data Cleaning_:
+  * _Data Cleaning_:
     Since we are using the report from Groww, data cleaning steps are very minimal.
     * Convert data types to appropriate formats (e.g., numeric types for stock quantity, buy value, sell value etc.)
-  _Grouping and Aggregating_:
+  * _Grouping and Aggregating_:
     Group by stock and trade type to summarize total values and P&L.
 
 **Assumptions:**
