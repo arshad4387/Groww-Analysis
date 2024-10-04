@@ -1,0 +1,113 @@
+import pandas as pd
+import numpy as np
+from IPython.display import display_html
+from itertools import chain, cycle
+
+df = pd.read_excel("your-file-path-here")
+
+# Find the headers
+header = df.iloc[2,0]
+
+# Platform and brokerage charges
+charges=df.iloc[7:19,0:2]
+charges_colname = ['Groww charges','Amount']
+charges.columns = charges_colname
+charges['Amount'] = charges['Amount'].astype(float)
+charges.reset_index(drop=True,inplace=True)
+
+# 3.Merge total and dividends as total gain
+toth=df.index[df['Name']=='Realised P&L']
+total=df.iloc[toth[0]+1:toth[0]+4,0:2]
+total_colname = ['Category','Amount Gained']
+total.columns = total_colname
+total.reset_index(drop=True,inplace=True)
+total['Amount Gained'] = total['Amount Gained'].astype(float)
+
+others=df.iloc[toth[0]+9:toth[0]+11,0:2]
+others_colname = ['Category','Amount Gained']
+others.columns = others_colname
+others.reset_index(drop=True,inplace=True)
+others['Amount Gained'] = others['Amount Gained'].astype(float)
+
+totgain = pd.concat([total,others],axis=0,ignore_index=True)
+totgain.loc['5',:] = ['Total Charges (STT, DP, Brokerage)',charges['Amount'].sum()]
+total_gain = totgain.loc[totgain['Category'] != 'Total Charges (STT, DP, Brokerage)', 'Amount Gained'].sum()
+total_charges = totgain.loc[totgain['Category'] == 'Total Charges (STT, DP, Brokerage)', 'Amount Gained'].sum()
+totgain.loc['6',:] = ['Net Profit/Loss',total_gain - total_charges]
+
+# 4.Stock differentiation
+shth=df.index[df['Name']=='Intraday trades']
+stocks=df.iloc[shth[0]+2:,:]
+empty = stocks[stocks.isnull().all(axis=1)]
+emtrow=empty.index
+stock_colname = ['Stock','ISIN','Quantity','Buy date','Buy price','Buy value','Sell date','Sell price','Sell value','P&L','Remarks']
+
+# 5.Intraday stocks
+intra=df.iloc[shth[0]+2:emtrow[0],:]
+intra.columns = stock_colname
+intra.reset_index(drop=True,inplace=True)
+intra.loc[:,'Quantity'] = pd.to_numeric(intra['Quantity'], errors='coerce')
+intra.loc[:,'Buy value'] = pd.to_numeric(intra['Buy value'], errors='coerce')
+intra.loc[:,'Buy price']  = pd.to_numeric(intra['Buy price'], errors='coerce')
+intra.loc[:,'Sell value'] = pd.to_numeric(intra['Sell value'], errors='coerce')
+intra.loc[:,'Sell price'] = pd.to_numeric(intra['Sell price'], errors='coerce')
+intra.loc[:,'P&L'] = pd.to_numeric(intra['P&L'], errors='coerce')
+
+# 6.Short term stocks
+shth=df.index[df['Name']=='Short Term trades']
+short=df.iloc[shth[0]+2:emtrow[1],:]
+short.columns = stock_colname
+short.reset_index(drop=True,inplace=True)
+short.loc[:,'Quantity'] = pd.to_numeric(short['Quantity'], errors='coerce')
+short.loc[:,'Buy value'] = pd.to_numeric(short['Buy value'], errors='coerce')
+short.loc[:,'Buy price']  = pd.to_numeric(short['Buy price'], errors='coerce')
+short.loc[:,'Sell value'] = pd.to_numeric(short['Sell value'], errors='coerce')
+short.loc[:,'Sell price'] = pd.to_numeric(short['Sell price'], errors='coerce')
+short.loc[:,'P&L'] = pd.to_numeric(short['P&L'], errors='coerce')
+
+# # 7.Long term stocks
+lngh=df.index[df['Name']=='Long Term trades']
+long=df.iloc[lngh[0]+2:emtrow[2],:]
+long.columns = stock_colname
+long.reset_index(drop=True,inplace=True)
+long.loc[:,'Quantity'] = pd.to_numeric(long['Quantity'], errors='coerce')
+long.loc[:,'Buy value'] = pd.to_numeric(long['Buy value'], errors='coerce')
+long.loc[:,'Buy price']  = pd.to_numeric(long['Buy price'], errors='coerce')
+long.loc[:,'Sell value'] = pd.to_numeric(long['Sell value'], errors='coerce')
+long.loc[:,'Sell price'] = pd.to_numeric(long['Sell price'], errors='coerce')
+long.loc[:,'P&L'] = pd.to_numeric(long['P&L'], errors='coerce')
+
+# Analysis on Intraday
+intra_summary = intra.groupby("Stock").agg({'Quantity': 'sum','Buy value': 'sum','Sell value': 'sum','P&L': 'sum'}).reset_index()
+intra_summary.sort_values(by='P&L', ascending=False, inplace=True)
+intra_summary['Quantity'] = pd.to_numeric(intra_summary['Quantity'], errors='coerce')
+intra_summary['Buy value'] = pd.to_numeric(intra_summary['Buy value'], errors='coerce')
+intra_summary['Sell value'] = pd.to_numeric(intra_summary['Sell value'], errors='coerce')
+intra_summary['P&L'] = pd.to_numeric(intra_summary['P&L'], errors='coerce')
+
+# Analysis on Short term
+short_summary = short.groupby("Stock").agg({'Quantity': 'sum','Buy value': 'sum','Sell value': 'sum','P&L': 'sum'}).reset_index()
+short_summary.sort_values(by='P&L', ascending=False, inplace=True)
+short_summary['Quantity'] = pd.to_numeric(short_summary['Quantity'], errors='coerce')
+short_summary['Buy value'] = pd.to_numeric(short_summary['Buy value'], errors='coerce')
+short_summary['Sell value'] = pd.to_numeric(short_summary['Sell value'], errors='coerce')
+short_summary['P&L'] = pd.to_numeric(short_summary['P&L'], errors='coerce')
+
+# Analysis on Long term
+long_summary = long.groupby("Stock").agg({'Quantity': 'sum','Buy value': 'sum','Sell value': 'sum','P&L': 'sum'}).reset_index()
+long_summary.sort_values(by='P&L', ascending=False, inplace=True)
+long_summary['Quantity'] = pd.to_numeric(long_summary['Quantity'], errors='coerce')
+long_summary['Buy value'] = pd.to_numeric(long_summary['Buy value'], errors='coerce')
+long_summary['Sell value'] = pd.to_numeric(long_summary['Sell value'], errors='coerce')
+long_summary['P&L'] = pd.to_numeric(long_summary['P&L'], errors='coerce')
+
+# Displaying dataframes together
+def display_side_by_side(*args, titles=cycle([''])):
+    html_str = ''
+    for df, title in zip(args, chain(titles, cycle(['</br>']))):
+        html_str += '<th style="text-align:center"><td style="vertical-align:top">'
+        html_str += f'<h2 style="text-align: center;">{title}</h2>'
+        html_str += df.to_html().replace('table', 'table style="display:inline"')
+        html_str += '</td></th>'
+    display_html(html_str, raw=True)
+display_side_by_side(totgain, intra_summary, short_summary, long_summary, titles=['Overall Summary','Intraday Summary', 'Short Term Stock Summary', 'Long Term Stock Summary'])
