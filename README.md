@@ -62,5 +62,5 @@
   This project provides a robust framework for analyzing stock trading performance, helping traders and investors make informed decisions. By identifying the top gainers and losers, one can refine trading strategies and improve profitability.
 
 - ## Code
-- **[Groww Summary](https://github.com/arshad4387/Groww-Analysis/blob/main/Groww%20Summary.ipynb)**: Detailed summary and analysis of the Groww dataset.
+- **[Groww Summary](https://github.com/arshad4387/Groww-Analysis/blob/Code-Snippets/Groww%20Stock%20Summary)**: Detailed summary and analysis of the Groww dataset.
 
