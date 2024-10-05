@@ -63,4 +63,4 @@
 
 - ## Code
 - **[Groww Summary](https://github.com/arshad4387/Groww-Analysis/blob/main/Groww%20Summary.ipynb)**: Detailed summary and analysis of the Groww dataset.
-- **[Groww Top & Least Performing Stocks](https://github.com/arshad4387/Groww-Analysis/blob/main/Groww%20Summary.ipynb)**: List off top and least performing stocks based on P&L.
+- **[Groww Top & Least Performing Stocks](https://github.com/arshad4387/Groww-Analysis/blob/main/Groww%20Analysis%20%20Top%20%26%20Least%20Performing%20Stocks.ipynb)**: List off top and least performing stocks based on P&L.
